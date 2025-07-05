@@ -32,7 +32,6 @@ Route::post('/payment', [PaymentController::class, 'payment'])->name('payment');
 
 
 
-Route::match(['get', 'post'], '/success', [PaymentController::class, 'success'])->name('success');
-Route::match(['get', 'post'], '/fail', [PaymentController::class, 'fail'])->name('fail');
-Route::match(['get', 'post'], '/cancel', [PaymentController::class, 'cancel'])->name('cancel');
-
+// Route::post('/success', [PaymentController::class, 'success'])->name('success');
+// Route::post('/fail', [PaymentController::class, 'fail'])->name('fail');
+// Route::post('/cancel', [PaymentController::class, 'cancel'])->name('cancel');

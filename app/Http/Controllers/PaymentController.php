@@ -16,9 +16,10 @@ class PaymentController extends Controller
         $payload = [
             'store_id'      => $store_id,
             'tran_id'       => $transaction_id,
-            'success_url'   => route('frontend.success'),
-            'fail_url'      => route('frontend.fail'),
-            'cancel_url'    => route('frontend.cancel'),
+     'success_url'   => url('/amarpay/success'),
+'fail_url'      => url('/amarpay/fail'),
+'cancel_url'    => url('/amarpay/cancel'),
+
             'amount'        => '10',
             'currency'      => 'BDT',
             'signature_key' => $signature_key,
@@ -60,7 +61,7 @@ class PaymentController extends Controller
 
   public function success(Request $request)
 {
-    dd('Callback received', $request->all());
+   return redirect('/about')->with('errorMessage', 'Payment successfyl.');
 }
 
 
@@ -72,6 +73,6 @@ class PaymentController extends Controller
 
     public function cancel(Request $request)
     {
-        return redirect('/')->with('warningMessage', 'Payment was cancelled.');
+        return redirect('/cart')->with('warningMessage', 'Payment was cancelled.');
     }
 }

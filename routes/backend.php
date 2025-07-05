@@ -6,9 +6,9 @@ use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\RoleController;
-use App\Http\Controllers\backend\UserController; 
+use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia; 
+use Inertia\Inertia;
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
