@@ -72,3 +72,8 @@
     </div>
 </section>
 @endpush
+
+<script>
+    console.log("Clearing browser sessionStorage cart...");
+    sessionStorage.removeItem('cart');
+</script>

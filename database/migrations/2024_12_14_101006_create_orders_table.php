@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
 			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('quantity');
+ 
+
             $table->boolean('status')->default(1)->comment('0=>inactive, 1=>active');
             $table->softDeletes();
             $table->timestamps();
