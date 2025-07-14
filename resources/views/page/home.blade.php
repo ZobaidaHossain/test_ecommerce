@@ -116,32 +116,6 @@
             sessionStorage.setItem('currentProduct', JSON.stringify({ title, price, image, brand }));
         }
 
-//  function addToCart() {
-//     const product = JSON.parse(sessionStorage.getItem('currentProduct'));
-
-//     if (product) {
-//         let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-
-//         // Check if the product already exists in the cart
-//         const isDuplicate = cart.some(item => item.title === product.title);
-
-//         if (isDuplicate) {
-//             alert('Product already added to the cart!');
-//         } else {
-//             cart.push(product);
-//             sessionStorage.setItem('cart', JSON.stringify(cart));
-
-//             // Notify user
-//             alert(`${product.title} has been added to your cart!`);
-
-//             // Update cart count dynamically
-//             updateCartCount();
-//         }
-//     } else {
-//         alert('No product selected. Please try again.');
-//     }
-// }
-
 function addToCart() {
     const product = JSON.parse(sessionStorage.getItem('currentProduct'));
 

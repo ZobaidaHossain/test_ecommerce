@@ -22,7 +22,7 @@ class HomeController extends Controller
 
     }
     public function index(){
-        
+
         $data['sliders'] = $this->sliderService->activeList();
 $data['products']=$this->productService->activeList();
 
@@ -89,14 +89,41 @@ $data['products']=$this->productService->activeList();
 
         return response()->json(['success' => true, 'message' => 'Product added to cart!']);
     }
+//     public function addToCart(Request $request)
+// {
+//     $cart = session()->get('cart', []);
 
-    public function getCart()
-    {
-        $cart = session()->get('cart', []);
+//     $cart[] = [
+//         'product_id' => $request->product_id,
+//         'title' => $request->title,
+//         'price' => $request->price,
+//         'image' => $request->image,
+//         'brand' => $request->brand,
+//         'quantity' => $request->quantity ?? 1
+//     ];
+
+//     session()->put('cart', $cart);
+
+//     return response()->json(['success' => true, 'cart' => $cart]);
+// }
 
 
-        return response()->json(['cart' => $cart, 'count' => count($cart)]);
-    }
+    // public function getCart()
+    // {
+    //     $cart = session()->get('cart', []);
+
+
+    //     return response()->json(['cart' => $cart, 'count' => count($cart)]);
+    // }
+ public function getCart()
+{
+    Log::info('getCart session ID: ' . session()->getId());
+    Log::info('getCart session cart: ' . json_encode(session()->get('cart', [])));
+
+    $cart = session()->get('cart', []);
+    return response()->json(['cart' => $cart, 'count' => count($cart)]);
+}
+
     public function removeCartItem(Request $request)
     {
         // Validate the incoming request

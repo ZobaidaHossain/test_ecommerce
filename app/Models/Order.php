@@ -10,7 +10,7 @@ class Order extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable=[
-'product_id','quantity','status'
+'product_id','quantity','status',
     ];
     protected $dates=['deleted_at'];
 
@@ -26,5 +26,5 @@ public function product()
     {
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
-    
+
 }
